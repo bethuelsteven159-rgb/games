@@ -16,6 +16,11 @@ import RegisterPage from './pages/RegisterPage.jsx'
 import SearchPage from './pages/SearchPage.jsx'
 import SetupPage from './pages/SetupPage.jsx'
 
+const routerBasename =
+  import.meta.env.BASE_URL === '/'
+    ? undefined
+    : import.meta.env.BASE_URL.replace(/\/$/, '')
+
 function App() {
   if (!isSupabaseConfigured) {
     return <SetupPage />
@@ -23,7 +28,7 @@ function App() {
 
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={routerBasename}>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />

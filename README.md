@@ -17,6 +17,19 @@ Digit Duel is a Supabase-powered multiplayer number guessing game built with Vit
 5. In that same Email provider configuration, disable email confirmation if you want username-only auth with generated `@digitduel.local` addresses.
 6. Start the app with `npm run dev`.
 
+## GitHub Pages
+
+This project is configured to deploy to GitHub Pages with GitHub Actions.
+
+1. Push to `main`.
+2. In GitHub, open `Settings -> Pages`.
+3. Set `Source` to `GitHub Actions`.
+4. Wait for the `Deploy GitHub Pages` workflow to finish.
+
+The published site URL for this repository is:
+
+- `https://bethuelsteven159-rgb.github.io/games/`
+
 ## Project structure
 
 - `src/context/AuthContext.jsx`: session and profile bootstrap logic.

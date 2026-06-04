@@ -8,6 +8,27 @@
       name="description"
       content="Digit Duel is a Supabase-powered multiplayer number guessing game."
     />
+    <script>
+      ;(() => {
+        const { location } = window
+
+        if (!location.search.startsWith('?/')) {
+          return
+        }
+
+        const decodedPath = location.search
+          .slice(2)
+          .split('&')
+          .map((segment) => segment.replace(/~and~/g, '&'))
+          .join('?')
+
+        window.history.replaceState(
+          null,
+          '',
+          `${location.pathname}${decodedPath}${location.hash}`,
+        )
+      })()
+    </script>
     <title>Digit Duel</title>
   </head>
   <body>
